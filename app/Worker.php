@@ -2,51 +2,40 @@
 
 namespace App;
 
-class Worker {
-    // свойства
+
+class Worker implements WorkerInterface
+{
     public string $name;
     public int $age;
-    public array $hours;
 
-    // конструктор
-    public function __construct($name, $age, $hours) {
+    public function __construct(string $name, int $age)
+    {
         $this -> name = $name;
         $this -> age = $age;
-        $this -> hours = $hours;
     }
 
-    // методы
-    public function work():string {
-        return "Я работаю";
+    public function work(): string
+    {
+        return "I'm working";
     }
 
-    public function getName():string
+    public function goOutWork(): string
+    {
+        return "I'm go out";
+    }
+
+    public function getName(): string
     {
         return $this -> name;
     }
 
-    public function setName(string $newName):void
+    public function setName(string $newName): void
     {
         $this -> name = $newName;
     }
 
-    public function getAge():int
+    public function getAge(): int
     {
         return $this -> age;
-    }
-
-    public function setAge(int $newAge): void
-    {
-        $this -> age = $newAge;
-    }
-
-    public function getHours():array
-    {
-        return $this -> hours;
-    }
-
-    public function setHours(array $newHours):void
-    {
-        $this -> hours = $newHours;
     }
 }

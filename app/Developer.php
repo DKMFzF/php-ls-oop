@@ -2,47 +2,48 @@
 
 namespace App;
 
+
 class Developer extends Worker
 {
-    public string $subname;
-    public string $itSpec;
+    public string $placeWork;
+    public int $ageWork;
 
-    // конструктор для суперкласса
     public function __construct(
         string $name,
         int $age,
-        array $hours,
-        string $subname,
-        string $itSpec
-    ) {
-        parent::__construct($name, $age, $hours);
-        $this -> subname = $subname;
-        $this -> itSpec = $itSpec;
+        string $placeWork,
+        int $ageWork)
+    {
+        parent::__construct($name, $age);
+
+        $this -> name = $name;
+        $this -> age = $age;
+        $this -> placeWork = $placeWork;
+        $this -> ageWork = $ageWork;
     }
 
-    // Переопределение функции
     public function work(): string
     {
-        return 'Я работаю программистом';
+        return 'Маму ебал';
     }
 
-    public function getSubName(): string
+    public function getPlaceWork(): string
     {
-        return $this -> subname;
+        return $this->placeWork;
     }
 
-    public function setSubName(string $newSubName): void
+    public function setPlaceWork(string $placeWork): void
     {
-        $this -> subname = $newSubName;
+        $this->placeWork = $placeWork;
     }
 
-    public function getItSpec():string
+    public function getAgeWork(): int
     {
-        return $this -> itSpec;
+        return $this->ageWork;
     }
 
-    public function setItSpec(string $newItSpec): void
+    public function setAgeWork(int $ageWork): void
     {
-        $this -> itSpec = $newItSpec;
+        $this->ageWork = $ageWork;
     }
 }

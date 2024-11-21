@@ -1,12 +1,8 @@
 <?php
 
-require_once('../app/Worker.php');
-require_once('../app/Developer.php');
+require_once('../vendor/autoload.php');
 
-$worker = new \App\Worker('Кирилл', 19, [1, 2, 3, 4, 5]);
-$developer = new \App\Developer('Максим', 19, [1, 2, 3, 4, 5], 'Чернухин', 'Frontender');
+$obj = new \App\Developer('Кирилл', 19, 'HueSosik', 1);
 
-echo $worker -> work() . PHP_EOL;
-echo $developer -> work() . PHP_EOL;
-
-echo $developer -> getAge() . PHP_EOL;
+echo $obj -> work() . PHP_EOL;
+echo $obj -> goOutWork() . PHP_EOL;
