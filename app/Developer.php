@@ -25,4 +25,24 @@ class Developer extends Worker
     {
         return 'Я работаю программистом';
     }
+
+    public function getSubName(): string
+    {
+        return $this -> subname;
+    }
+
+    public function setSubName(string $newSubName): void
+    {
+        $this -> subname = $newSubName;
+    }
+
+    public function getItSpec():string
+    {
+        return $this -> itSpec;
+    }
+
+    public function setItSpec(string $newItSpec): void
+    {
+        $this -> itSpec = $newItSpec;
+    }
 }

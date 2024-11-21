@@ -19,4 +19,34 @@ class Worker {
     public function work():string {
         return "Я работаю";
     }
+
+    public function getName():string
+    {
+        return $this -> name;
+    }
+
+    public function setName(string $newName):void
+    {
+        $this -> name = $newName;
+    }
+
+    public function getAge():int
+    {
+        return $this -> age;
+    }
+
+    public function setAge(int $newAge): void
+    {
+        $this -> age = $newAge;
+    }
+
+    public function getHours():array
+    {
+        return $this -> hours;
+    }
+
+    public function setHours(array $newHours):void
+    {
+        $this -> hours = $newHours;
+    }
 }
