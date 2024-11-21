@@ -6,11 +6,19 @@ namespace App;
 class Worker implements WorkerInterface
 {
     public string $name;
+    public string $subname;
+    public string $patronymic;
     public int $age;
 
-    public function __construct(string $name, int $age)
+    public function __construct(
+        string $name,
+        string $subname,
+        string $patronymic,
+        int $age)
     {
-        $this -> name = $name;
+        $this->name = $name;
+        $this->subname = $subname;
+        $this -> patronymic = $patronymic;
         $this -> age = $age;
     }
 
@@ -26,16 +34,6 @@ class Worker implements WorkerInterface
 
     public function getName(): string
     {
-        return $this -> name;
-    }
-
-    public function setName(string $newName): void
-    {
-        $this -> name = $newName;
-    }
-
-    public function getAge(): int
-    {
-        return $this -> age;
+        return $this->name;
     }
 }

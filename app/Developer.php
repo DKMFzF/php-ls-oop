@@ -5,18 +5,24 @@ namespace App;
 
 class Developer extends Worker
 {
+    use HesRest;
+
     public string $placeWork;
     public int $ageWork;
 
     public function __construct(
         string $name,
+        string $subname,
+        string $patronymic,
         int $age,
         string $placeWork,
         int $ageWork)
     {
-        parent::__construct($name, $age);
+        parent::__construct($name, $subname, $patronymic, $age);
 
         $this -> name = $name;
+        $this -> subname = $subname;
+        $this -> patronymic = $patronymic;
         $this -> age = $age;
         $this -> placeWork = $placeWork;
         $this -> ageWork = $ageWork;
@@ -25,25 +31,5 @@ class Developer extends Worker
     public function work(): string
     {
         return 'Маму ебал';
-    }
-
-    public function getPlaceWork(): string
-    {
-        return $this->placeWork;
-    }
-
-    public function setPlaceWork(string $placeWork): void
-    {
-        $this->placeWork = $placeWork;
-    }
-
-    public function getAgeWork(): int
-    {
-        return $this->ageWork;
-    }
-
-    public function setAgeWork(int $ageWork): void
-    {
-        $this->ageWork = $ageWork;
     }
 }
